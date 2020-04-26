@@ -1,0 +1,229 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "transitions.scss";
+@import "integrations/mapping.scss";
+@import "logs/view-record.scss";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+.login-container {
+    background: linear-gradient(
+                rgba(0, 0, 0.5, 0.80), 
+                rgba(0, 0, 0.5, 0.80)
+            ), url("/images/loginbg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    .card {
+        background-color: transparent;
+        .card-header {
+            background-color: #2b333e;
+            color: #fff;
+        }
+    }
+
+    .form-group.row {
+        margin: 0;
+    }
+
+    .btn-success {
+        width: 100%;
+        background-color: #f6b733;
+        border-color: #f6b733;
+    }
+
+    .container {
+        padding-top: unset;
+        padding-bottom: unset;
+    }
+
+    .login-img {
+        background: url("/images/FShip_512x512.png");
+        background-size: 140px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #373d48;
+        background-position-y: 30%;
+        min-height: 200px;
+
+        h5 {
+            text-align: center;
+            flex-grow: 1;
+            color: #fff;
+            .orange {
+                color: #f6b733;
+            }
+        }
+    }
+
+    .btn {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .btn:first-child p {
+        color: #fff;
+    }
+
+    .login-col-two .btn {
+        width: 100%;
+        height: 50%;
+    }
+
+    .justify-content-center {
+        position: relative;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+    }
+}
+
+
+.row-border {
+    border: 1px solid #aaa;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.ic-remove {
+    color: #ddd;
+    &:hover {
+        color: #dc3545;
+    }
+}
+
+.container--fluid {
+    max-width: 100%;
+}
+
+.bg-orange-panel {
+    background-color: #fffcf2;
+}
+
+.row--dense > .col {
+    padding: 0!important;
+}
+
+// ---------- FUSEDSHIP STYLES ----------------------------------------------------------
+
+#fusedship {
+    background-color: #f9f9f9;
+    .theme--dark.v-navigation-drawer {
+        background-color: #2b333e;
+
+        .v-list-item__content {
+            color: #6c737b!important;
+        }
+
+        .v-list-item--active {
+            &:before {
+                background-color: transparent!important;
+            }
+            .v-list-item__content {
+                color: #fff!important;
+            }
+        }
+
+        .v-skeleton-loader__list-item {
+            background: transparent!important;
+        }
+    }
+
+    .fusedship-header {
+        .v-toolbar__content {
+            padding: 0 3rem;
+            height: 100%!important;
+            button {
+                height: 40px!important;
+                box-shadow: none;
+            }
+
+            .v-input__slot {
+                width: 250px;
+                fieldset {
+                    color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.fusedship-title {
+    color: #f6b733;
+}
+
+.fusedship-logo-container {
+    background-color: #373d48;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    .fusedship-logo {
+        img { width: 40px; height: 40px; margin-right: 0.3rem; }
+        h3 { 
+            margin-top: 0.3rem !important;
+            font-weight: 700;
+            .highlight {
+                color: #f6b733
+            }
+        }
+    }
+}
+
+.v-tabs.fusedship-tab {
+    .v-tabs-items {
+        border: 1px solid #eee;
+        border-radius: 2px;
+    }
+
+    .v-tab {
+        background-color: rgba(0, 0, 0, 0.15);
+        &.v-tab--active {
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid #eee;
+            border-bottom: none;
+        }
+    }
+    .v-tabs-slider-wrapper {
+        opacity: 0;
+    }
+}
+
+a.v-breadcrumbs__item {
+    color: #333!important;
+    &.v-breadcrumbs__item--disabled {
+        color: #aaa!important;
+    }
+}
+
+.v-input--selection-controls__ripple {
+    z-index: 1;
+}

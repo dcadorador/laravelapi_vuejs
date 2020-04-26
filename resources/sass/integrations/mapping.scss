@@ -1,0 +1,61 @@
+.integration-mapping {
+    .table-mapping {
+        tr, td, th {
+            border: 0px;
+        }
+        td, th {
+            padding: 1rem;
+        }
+
+        .item-row-header {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .v-input__slot {
+            &:before {
+                border-color: #eee!important;
+            }
+            background-color: #fff;
+            border-radius: 3px;
+            padding: 0.3rem;
+        }
+    }
+
+    .table-valuelookups, .table-fs {
+
+        thead > tr > th {
+            background-color: #f6b733;
+            color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #eee;
+        }
+
+        .v-input__control { height: 35px; }
+        .v-input__slot:before {
+            border-color: transparent!important;
+        }
+
+        tbody tr:nth-of-type(2n+1) {
+            background-color: #fff;
+        }
+
+        tbody tr:nth-of-type(2n) {
+            background-color: #fffcf2;
+        }
+    }
+
+    .table-valuelookups {
+        thead > tr > th {
+            width: 25%;
+        }
+    }
+
+    .add-lookup-wrapper {
+        .add-lookup {
+            max-width: 450px;
+            display: inline;
+        }
+    }
+}

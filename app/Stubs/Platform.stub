@@ -1,0 +1,134 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Services\Platforms\PlatformAbstract;
+use Symfony\Component\HttpFoundation\ParameterBag;
+
+class DummyClass extends PlatformAbstract
+{
+    /**
+     * Platform constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+    * Override init func for each integration platform will
+    * have its own interpretation of its configuration
+    * @param array $config [Optional] configurations
+    */
+    protected function init(Array $config = [])
+    {
+    }
+
+    /**
+    * Get integrations data that will be process
+    * @return Array of objects data
+    */
+    protected function get()
+    {
+        return '';
+    }
+
+    /**
+    * Override this for each integration platform will
+    * have its own source id pattern
+    * @param Array $data the data from integration platform function get
+    * @return Integer source id
+    */
+    protected function getSourceId($data)
+    {
+         return '';
+    }
+
+    /**
+    * Override this for each integration platform will
+    * have its own source id pattern
+    * @param $start - date start
+    * @param $end - date end
+    * @return array
+    */
+    protected function getByDateRange($start, $end)
+    {
+        return [];
+    }
+
+    /**
+    * Override this for each integration platform will
+    * have its own way of find by id api call
+    * @param $id
+    * @param $params
+    * @return array
+    */
+    protected function findBySourceId($id, $params = [])
+    {
+        return [];
+    }
+
+    /**
+    * Override mapping functions so each integration platform will have their way
+    * interpreting customfield
+    * @param string $source_field The source field
+    * @param array $source_data
+    */
+    public function getCustomfield(string $source_field, array $source_data)
+    {
+        return [];
+    }
+
+
+    /**
+    * Gets the order items.
+    * @param array $source_data The source data
+    * @return     array   item orders
+    */
+    protected function getItems(array $source_data)
+    {
+        return [];
+    }
+
+    /**
+    * Override this so each integration platform will
+    * have its own default mapper fields
+    * @return Array maps
+    */
+    public static function defaultMaps()
+    {
+        return [];
+    }
+
+    /**
+    * Override this so each integration platform will
+    * have its own default configuration meta keys
+    * @return Array meta
+    */
+    public static function defaultMeta()
+    {
+        return [];
+    }
+
+    /**
+    * Override this so each integration platform has
+    * its own default source fields
+    */
+    public static function defaultSourceFields()
+    {
+        return [];
+    }
+
+    /**
+    * Override this so each integration platform
+    * has its own way of updating their source integration data
+    * Parameter Bag is used as a standard for data formatting
+    * @param $source
+    * @param $parameters
+    * @param null consignment
+    */
+    protected function updateSourceData($source, $parameters, $consignment = null)
+    {
+    }
+
+}
